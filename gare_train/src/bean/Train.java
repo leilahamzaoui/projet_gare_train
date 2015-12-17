@@ -5,9 +5,11 @@
  */
 package bean;
 
+import java.util.List;
+
 /**
  *
- * @author maison
+ * @author sony
  */
 public class Train {
     private int id;
@@ -17,6 +19,9 @@ public class Train {
     private int date_arrive;
     private String ville_depart;
     private String ville_arrivee;
+    private Gare gare_Depart;
+    private Gare gare_Arrivee;
+    private List<Gare> gares_Arret;
     
     public Train() {
     }
@@ -25,41 +30,30 @@ public class Train {
         this.id = id;
     }
 
-    public Train(int heure_depart, int heure_arrive, int date_depart, int date_arrive,String ville_depart,String ville_arrivee) {
-        this.heure_depart = heure_depart;
-        this.heure_arrive = heure_arrive;
-        this.date_depart = date_depart;
-        this.date_arrive = date_arrive;
-        this.ville_arrivee= ville_arrivee;
-        this.ville_depart= ville_depart;
-    }
-
-    public Train(int id, int heure_depart, int heure_arrive, int date_depart, int date_arrive,String ville_depart,String ville_arrivee) {
+    public Train(int id, int heure_depart, int heure_arrive, int date_depart, int date_arrive, String ville_depart, String ville_arrivee, Gare gare_Depart, Gare gare_Arrivee, List<Gare> gares_Arret) {
         this.id = id;
         this.heure_depart = heure_depart;
         this.heure_arrive = heure_arrive;
         this.date_depart = date_depart;
         this.date_arrive = date_arrive;
-        this.ville_arrivee= ville_arrivee;
-        this.ville_depart= ville_depart;
-    }
-
-    public String getVille_depart() {
-        return ville_depart;
-    }
-
-    public void setVille_depart(String ville_depart) {
         this.ville_depart = ville_depart;
-    }
-
-    public String getVille_arrivee() {
-        return ville_arrivee;
-    }
-
-    public void setVille_arrivee(String ville_arrivee) {
         this.ville_arrivee = ville_arrivee;
+        this.gare_Depart = gare_Depart;
+        this.gare_Arrivee = gare_Arrivee;
+        this.gares_Arret = gares_Arret;
     }
-    
+
+    public Train(int heure_depart, int heure_arrive, int date_depart, int date_arrive, String ville_depart, String ville_arrivee, Gare gare_Depart, Gare gare_Arrivee, List<Gare> gares_Arret) {
+        this.heure_depart = heure_depart;
+        this.heure_arrive = heure_arrive;
+        this.date_depart = date_depart;
+        this.date_arrive = date_arrive;
+        this.ville_depart = ville_depart;
+        this.ville_arrivee = ville_arrivee;
+        this.gare_Depart = gare_Depart;
+        this.gare_Arrivee = gare_Arrivee;
+        this.gares_Arret = gares_Arret;
+    }
 
     public int getId() {
         return id;
@@ -99,6 +93,46 @@ public class Train {
 
     public void setDate_arrive(int date_arrive) {
         this.date_arrive = date_arrive;
+    }
+
+    public String getVille_depart() {
+        return ville_depart;
+    }
+
+    public void setVille_depart(String ville_depart) {
+        this.ville_depart = ville_depart;
+    }
+
+    public String getVille_arrivee() {
+        return ville_arrivee;
+    }
+
+    public void setVille_arrivee(String ville_arrivee) {
+        this.ville_arrivee = ville_arrivee;
+    }
+
+    public Gare getGare_Depart() {
+        return gare_Depart;
+    }
+
+    public void setGare_Depart(Gare gare_Depart) {
+        this.gare_Depart = gare_Depart;
+    }
+
+    public Gare getGare_Arrivee() {
+        return gare_Arrivee;
+    }
+
+    public void setGare_Arrivee(Gare gare_Arrivee) {
+        this.gare_Arrivee = gare_Arrivee;
+    }
+
+    public List<Gare> getGares_Arret() {
+        return gares_Arret;
+    }
+
+    public void setGares_Arret(List<Gare> gares_Arret) {
+        this.gares_Arret = gares_Arret;
     }
 
     @Override

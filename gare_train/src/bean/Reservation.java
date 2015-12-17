@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author maison
  */
 public class Reservation {
-    private String id;
+    private int id;
     private int date_reservation;
     private String destination;
     private boolean confirme;
@@ -21,7 +21,7 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(String id) {
+    public Reservation(int id) {
         this.id = id;
     }
 
@@ -33,7 +33,7 @@ public class Reservation {
         this.train = train;
     }
 
-    public Reservation(String id, int date_reservation, String destination, boolean confirme, Client client,Train train) {
+    public Reservation(int id, int date_reservation, String destination, boolean confirme, Client client,Train train) {
         this.id = id;
         this.date_reservation = date_reservation;
         this.destination = destination;
@@ -51,11 +51,11 @@ public class Reservation {
     }
 
     
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -89,28 +89,6 @@ public class Reservation {
 
     public void setClient(Client client) {
         this.client = client;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Reservation other = (Reservation) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
     }
 
     @Override

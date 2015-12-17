@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author maison
  */
 public class Client {
-    private String id;
+    private int id;
     private String nom;
     private String prenom;
     private String adresse;
@@ -31,11 +31,11 @@ public class Client {
         this.reservations = reservations;
     }
 
-    public Client(String id) {
+    public Client(int id) {
         this.id = id;
     }
 
-    public Client(String id, String nom, String prenom, String adresse, int telephone, List<Reservation> reservations) {
+    public Client(int id, String nom, String prenom, String adresse, int telephone, List<Reservation> reservations) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -44,11 +44,11 @@ public class Client {
         this.reservations = reservations;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -90,28 +90,6 @@ public class Client {
 
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Client other = (Client) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
     }
 
     @Override

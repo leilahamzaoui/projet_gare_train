@@ -17,7 +17,7 @@ public class Gare {
     private String nom_gare;
     private String adresse;
     private String ville;
-    List<Train> trains;
+    private List<Train> trains;
 
     public Gare() {
     }

@@ -13,36 +13,39 @@ import java.util.Objects;
  * @author maison
  */
 public class Gare {
-    private String id;
+    private int id;
     private String nom_gare;
     private String adresse;
+    private String ville;
     List<Train> trains;
 
     public Gare() {
     }
 
-    public Gare(String id) {
+    public Gare(int id) {
         this.id = id;
     }
 
-    public Gare(String nom_gare, String adresse, List<Train> trains) {
+    public Gare(String nom_gare, String adresse, String ville, List<Train> trains) {
         this.nom_gare = nom_gare;
         this.adresse = adresse;
+        this.ville = ville;
         this.trains = trains;
     }
 
-    public Gare(String id, String nom_gare, String adresse, List<Train> trains) {
+    public Gare(int id, String nom_gare, String adresse, String ville, List<Train> trains) {
         this.id = id;
         this.nom_gare = nom_gare;
         this.adresse = adresse;
+        this.ville = ville;
         this.trains = trains;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -61,6 +64,13 @@ public class Gare {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
+     public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
 
     public List<Train> getTrains() {
         return trains;
@@ -71,30 +81,8 @@ public class Gare {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + Objects.hashCode(this.id);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Gare other = (Gare) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "Gare{" + "id=" + id + ", nom_gare=" + nom_gare + ", adresse=" + adresse + '}';
+        return "Gare{" + "id=" + id + ", nom_gare=" + nom_gare + ", adresse=" + adresse + ", ville=" + ville + '}';
     }
     
 }

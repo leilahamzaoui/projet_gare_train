@@ -18,7 +18,7 @@ public class Client {
     private String prenom;
     private String adresse;
     private int telephone;
-    List<Reservation> reservations;
+    private List<Reservation> reservations;
 
     public Client() {
     }
